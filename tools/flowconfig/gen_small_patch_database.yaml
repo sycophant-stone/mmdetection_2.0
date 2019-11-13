@@ -1,0 +1,8 @@
+{% set daily_work_dir = '%s/dataset' % (data_dir) %}
+
+---
+- utils.filesystem.ensure_dirs:
+    desc: 'create dirs'
+    input:
+      dirs:
+      - {{daily_work_dir}}/

@@ -1,0 +1,4 @@
+evaluation_all:
+  show_BasicBlock_fowward_time: False
+  show_Bottleneck_fowward_time: False
+  statistic_memcostage_flops: False

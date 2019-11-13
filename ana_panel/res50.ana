@@ -1,0 +1,432 @@
+conv1's  input_shape: torch.Size([80, 80])
+conv2's  input_shape: torch.Size([80, 80])
+conv3's  input_shape: torch.Size([80, 80])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,64,80,80)
+[  conv1  ]    output[b,c,h,w]: (,64,80.0,80.0)
+[  conv1  ]    mem costage:   4096
+[  conv1  ]    flops      :   26214400.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,64,80,80)
+[  conv2  ]    output[b,c,h,w]: (,64,80.0,80.0)
+[  conv2  ]    mem costage:   36864
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,64,80,80)
+[  conv3  ]    output[b,c,h,w]: (,256,80.0,80.0)
+[  conv3  ]    mem costage:   16384
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   57344
+[  All  ]    flops      :   367001600.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([80, 80])
+conv2's  input_shape: torch.Size([80, 80])
+conv3's  input_shape: torch.Size([80, 80])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,256,80,80)
+[  conv1  ]    output[b,c,h,w]: (,64,80.0,80.0)
+[  conv1  ]    mem costage:   16384
+[  conv1  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,64,80,80)
+[  conv2  ]    output[b,c,h,w]: (,64,80.0,80.0)
+[  conv2  ]    mem costage:   36864
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,64,80,80)
+[  conv3  ]    output[b,c,h,w]: (,256,80.0,80.0)
+[  conv3  ]    mem costage:   16384
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   69632
+[  All  ]    flops      :   445644800.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([80, 80])
+conv2's  input_shape: torch.Size([80, 80])
+conv3's  input_shape: torch.Size([80, 80])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,256,80,80)
+[  conv1  ]    output[b,c,h,w]: (,64,80.0,80.0)
+[  conv1  ]    mem costage:   16384
+[  conv1  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,64,80,80)
+[  conv2  ]    output[b,c,h,w]: (,64,80.0,80.0)
+[  conv2  ]    mem costage:   36864
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,64,80,80)
+[  conv3  ]    output[b,c,h,w]: (,256,80.0,80.0)
+[  conv3  ]    mem costage:   16384
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   69632
+[  All  ]    flops      :   445644800.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([80, 80])
+conv2's  input_shape: torch.Size([40, 40])
+conv3's  input_shape: torch.Size([40, 40])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,256,80,80)
+[  conv1  ]    output[b,c,h,w]: (,128,40.5,40.5)
+[  conv1  ]    mem costage:   32768
+[  conv1  ]    flops      :   53747712.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,128,40,40)
+[  conv2  ]    output[b,c,h,w]: (,128,40.0,40.0)
+[  conv2  ]    mem costage:   147456
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,128,40,40)
+[  conv3  ]    output[b,c,h,w]: (,512,40.0,40.0)
+[  conv3  ]    mem costage:   65536
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   245760
+[  All  ]    flops      :   394534912.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([40, 40])
+conv2's  input_shape: torch.Size([40, 40])
+conv3's  input_shape: torch.Size([40, 40])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,512,40,40)
+[  conv1  ]    output[b,c,h,w]: (,128,40.0,40.0)
+[  conv1  ]    mem costage:   65536
+[  conv1  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,128,40,40)
+[  conv2  ]    output[b,c,h,w]: (,128,40.0,40.0)
+[  conv2  ]    mem costage:   147456
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,128,40,40)
+[  conv3  ]    output[b,c,h,w]: (,512,40.0,40.0)
+[  conv3  ]    mem costage:   65536
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   278528
+[  All  ]    flops      :   445644800.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([40, 40])
+conv2's  input_shape: torch.Size([40, 40])
+conv3's  input_shape: torch.Size([40, 40])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,512,40,40)
+[  conv1  ]    output[b,c,h,w]: (,128,40.0,40.0)
+[  conv1  ]    mem costage:   65536
+[  conv1  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,128,40,40)
+[  conv2  ]    output[b,c,h,w]: (,128,40.0,40.0)
+[  conv2  ]    mem costage:   147456
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,128,40,40)
+[  conv3  ]    output[b,c,h,w]: (,512,40.0,40.0)
+[  conv3  ]    mem costage:   65536
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   278528
+[  All  ]    flops      :   445644800.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([40, 40])
+conv2's  input_shape: torch.Size([40, 40])
+conv3's  input_shape: torch.Size([40, 40])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,512,40,40)
+[  conv1  ]    output[b,c,h,w]: (,128,40.0,40.0)
+[  conv1  ]    mem costage:   65536
+[  conv1  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,128,40,40)
+[  conv2  ]    output[b,c,h,w]: (,128,40.0,40.0)
+[  conv2  ]    mem costage:   147456
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,128,40,40)
+[  conv3  ]    output[b,c,h,w]: (,512,40.0,40.0)
+[  conv3  ]    mem costage:   65536
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   278528
+[  All  ]    flops      :   445644800.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([40, 40])
+conv2's  input_shape: torch.Size([20, 20])
+conv3's  input_shape: torch.Size([20, 20])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,512,40,40)
+[  conv1  ]    output[b,c,h,w]: (,256,20.5,20.5)
+[  conv1  ]    mem costage:   131072
+[  conv1  ]    flops      :   55083008.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,256,20,20)
+[  conv2  ]    output[b,c,h,w]: (,256,20.0,20.0)
+[  conv2  ]    mem costage:   589824
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,256,20,20)
+[  conv3  ]    output[b,c,h,w]: (,1024,20.0,20.0)
+[  conv3  ]    mem costage:   262144
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   983040
+[  All  ]    flops      :   395870208.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([20, 20])
+conv2's  input_shape: torch.Size([20, 20])
+conv3's  input_shape: torch.Size([20, 20])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,1024,20,20)
+[  conv1  ]    output[b,c,h,w]: (,256,20.0,20.0)
+[  conv1  ]    mem costage:   262144
+[  conv1  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,256,20,20)
+[  conv2  ]    output[b,c,h,w]: (,256,20.0,20.0)
+[  conv2  ]    mem costage:   589824
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,256,20,20)
+[  conv3  ]    output[b,c,h,w]: (,1024,20.0,20.0)
+[  conv3  ]    mem costage:   262144
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   1114112
+[  All  ]    flops      :   445644800.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([20, 20])
+conv2's  input_shape: torch.Size([20, 20])
+conv3's  input_shape: torch.Size([20, 20])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,1024,20,20)
+[  conv1  ]    output[b,c,h,w]: (,256,20.0,20.0)
+[  conv1  ]    mem costage:   262144
+[  conv1  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,256,20,20)
+[  conv2  ]    output[b,c,h,w]: (,256,20.0,20.0)
+[  conv2  ]    mem costage:   589824
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,256,20,20)
+[  conv3  ]    output[b,c,h,w]: (,1024,20.0,20.0)
+[  conv3  ]    mem costage:   262144
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   1114112
+[  All  ]    flops      :   445644800.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([20, 20])
+conv2's  input_shape: torch.Size([20, 20])
+conv3's  input_shape: torch.Size([20, 20])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,1024,20,20)
+[  conv1  ]    output[b,c,h,w]: (,256,20.0,20.0)
+[  conv1  ]    mem costage:   262144
+[  conv1  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,256,20,20)
+[  conv2  ]    output[b,c,h,w]: (,256,20.0,20.0)
+[  conv2  ]    mem costage:   589824
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,256,20,20)
+[  conv3  ]    output[b,c,h,w]: (,1024,20.0,20.0)
+[  conv3  ]    mem costage:   262144
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   1114112
+[  All  ]    flops      :   445644800.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([20, 20])
+conv2's  input_shape: torch.Size([20, 20])
+conv3's  input_shape: torch.Size([20, 20])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,1024,20,20)
+[  conv1  ]    output[b,c,h,w]: (,256,20.0,20.0)
+[  conv1  ]    mem costage:   262144
+[  conv1  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,256,20,20)
+[  conv2  ]    output[b,c,h,w]: (,256,20.0,20.0)
+[  conv2  ]    mem costage:   589824
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,256,20,20)
+[  conv3  ]    output[b,c,h,w]: (,1024,20.0,20.0)
+[  conv3  ]    mem costage:   262144
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   1114112
+[  All  ]    flops      :   445644800.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([20, 20])
+conv2's  input_shape: torch.Size([20, 20])
+conv3's  input_shape: torch.Size([20, 20])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,1024,20,20)
+[  conv1  ]    output[b,c,h,w]: (,256,20.0,20.0)
+[  conv1  ]    mem costage:   262144
+[  conv1  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,256,20,20)
+[  conv2  ]    output[b,c,h,w]: (,256,20.0,20.0)
+[  conv2  ]    mem costage:   589824
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,256,20,20)
+[  conv3  ]    output[b,c,h,w]: (,1024,20.0,20.0)
+[  conv3  ]    mem costage:   262144
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   1114112
+[  All  ]    flops      :   445644800.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([20, 20])
+conv2's  input_shape: torch.Size([10, 10])
+conv3's  input_shape: torch.Size([10, 10])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,1024,20,20)
+[  conv1  ]    output[b,c,h,w]: (,512,10.5,10.5)
+[  conv1  ]    mem costage:   524288
+[  conv1  ]    flops      :   57802752.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,512,10,10)
+[  conv2  ]    output[b,c,h,w]: (,512,10.0,10.0)
+[  conv2  ]    mem costage:   2359296
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,512,10,10)
+[  conv3  ]    output[b,c,h,w]: (,2048,10.0,10.0)
+[  conv3  ]    mem costage:   1048576
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   3932160
+[  All  ]    flops      :   398589952.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([10, 10])
+conv2's  input_shape: torch.Size([10, 10])
+conv3's  input_shape: torch.Size([10, 10])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,2048,10,10)
+[  conv1  ]    output[b,c,h,w]: (,512,10.0,10.0)
+[  conv1  ]    mem costage:   1048576
+[  conv1  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,512,10,10)
+[  conv2  ]    output[b,c,h,w]: (,512,10.0,10.0)
+[  conv2  ]    mem costage:   2359296
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,512,10,10)
+[  conv3  ]    output[b,c,h,w]: (,2048,10.0,10.0)
+[  conv3  ]    mem costage:   1048576
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   4456448
+[  All  ]    flops      :   445644800.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([10, 10])
+conv2's  input_shape: torch.Size([10, 10])
+conv3's  input_shape: torch.Size([10, 10])
+==============================================
+evaluation [[ Bottleneck  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,2048,10,10)
+[  conv1  ]    output[b,c,h,w]: (,512,10.0,10.0)
+[  conv1  ]    mem costage:   1048576
+[  conv1  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,512,10,10)
+[  conv2  ]    output[b,c,h,w]: (,512,10.0,10.0)
+[  conv2  ]    mem costage:   2359296
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv3  ]    input[b,c,h,w]: (,512,10,10)
+[  conv3  ]    output[b,c,h,w]: (,2048,10.0,10.0)
+[  conv3  ]    mem costage:   1048576
+[  conv3  ]    flops      :   104857600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   4456448
+[  All  ]    flops      :   445644800.0
+---------------------------------------------------------

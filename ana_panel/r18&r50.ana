@@ -1,0 +1,12 @@
+# Evaluation between Resnet18 & Resnet50
+
+	        memory costage	    flops
+resnet18	10985472	        10838016
+resnet50	20676608	        6903734272
+
+
+
+
+
+
+

@@ -1,0 +1,160 @@
+conv1's  input_shape: torch.Size([80, 80])
+conv2's  input_shape: torch.Size([80, 80])
+==============================================
+evaluation [[ BasicBlock  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,64,80,80)
+[  conv1  ]    output[b,c,h,w]: (,64,80.0,80.0)
+[  conv1  ]    mem costage:   36864
+[  conv1  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,64,80,80)
+[  conv2  ]    output[b,c,h,w]: (,64,80.0,80.0)
+[  conv2  ]    mem costage:   36864
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   73728
+[  All  ]    flops      :   471859200.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([80, 80])
+conv2's  input_shape: torch.Size([80, 80])
+==============================================
+evaluation [[ BasicBlock  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,64,80,80)
+[  conv1  ]    output[b,c,h,w]: (,64,80.0,80.0)
+[  conv1  ]    mem costage:   36864
+[  conv1  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,64,80,80)
+[  conv2  ]    output[b,c,h,w]: (,64,80.0,80.0)
+[  conv2  ]    mem costage:   36864
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   73728
+[  All  ]    flops      :   471859200.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([80, 80])
+conv2's  input_shape: torch.Size([40, 40])
+==============================================
+evaluation [[ BasicBlock  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,64,80,80)
+[  conv1  ]    output[b,c,h,w]: (,128,40.5,40.5)
+[  conv1  ]    mem costage:   73728
+[  conv1  ]    flops      :   120932352.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,128,40,40)
+[  conv2  ]    output[b,c,h,w]: (,128,40.0,40.0)
+[  conv2  ]    mem costage:   147456
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   221184
+[  All  ]    flops      :   356861952.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([40, 40])
+conv2's  input_shape: torch.Size([40, 40])
+==============================================
+evaluation [[ BasicBlock  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,128,40,40)
+[  conv1  ]    output[b,c,h,w]: (,128,40.0,40.0)
+[  conv1  ]    mem costage:   147456
+[  conv1  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,128,40,40)
+[  conv2  ]    output[b,c,h,w]: (,128,40.0,40.0)
+[  conv2  ]    mem costage:   147456
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   294912
+[  All  ]    flops      :   471859200.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([40, 40])
+conv2's  input_shape: torch.Size([20, 20])
+==============================================
+evaluation [[ BasicBlock  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,128,40,40)
+[  conv1  ]    output[b,c,h,w]: (,256,20.5,20.5)
+[  conv1  ]    mem costage:   294912
+[  conv1  ]    flops      :   123936768.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,256,20,20)
+[  conv2  ]    output[b,c,h,w]: (,256,20.0,20.0)
+[  conv2  ]    mem costage:   589824
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   884736
+[  All  ]    flops      :   359866368.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([20, 20])
+conv2's  input_shape: torch.Size([20, 20])
+==============================================
+evaluation [[ BasicBlock  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,256,20,20)
+[  conv1  ]    output[b,c,h,w]: (,256,20.0,20.0)
+[  conv1  ]    mem costage:   589824
+[  conv1  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,256,20,20)
+[  conv2  ]    output[b,c,h,w]: (,256,20.0,20.0)
+[  conv2  ]    mem costage:   589824
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   1179648
+[  All  ]    flops      :   471859200.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([20, 20])
+conv2's  input_shape: torch.Size([10, 10])
+==============================================
+evaluation [[ BasicBlock  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,256,20,20)
+[  conv1  ]    output[b,c,h,w]: (,512,10.5,10.5)
+[  conv1  ]    mem costage:   1179648
+[  conv1  ]    flops      :   130056192.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,512,10,10)
+[  conv2  ]    output[b,c,h,w]: (,512,10.0,10.0)
+[  conv2  ]    mem costage:   2359296
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   3538944
+[  All  ]    flops      :   365985792.0
+---------------------------------------------------------
+conv1's  input_shape: torch.Size([10, 10])
+conv2's  input_shape: torch.Size([10, 10])
+==============================================
+evaluation [[ BasicBlock  ]]  results:
+==============================================
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv1  ]    input[b,c,h,w]: (,512,10,10)
+[  conv1  ]    output[b,c,h,w]: (,512,10.0,10.0)
+[  conv1  ]    mem costage:   2359296
+[  conv1  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  %s  ]    input,ouput format is [b,c,h,w]
+[  conv2  ]    input[b,c,h,w]: (,512,10,10)
+[  conv2  ]    output[b,c,h,w]: (,512,10.0,10.0)
+[  conv2  ]    mem costage:   2359296
+[  conv2  ]    flops      :   235929600.0
+---------------------------------------------------------
+[  All  ]    mem costage:   4718592
+[  All  ]    flops      :   471859200.0
+---------------------------------------------------------

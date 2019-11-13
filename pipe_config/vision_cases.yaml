@@ -1,0 +1,29 @@
+{% set daily_work_dir = '%s/dataset' % (data_dir) %}
+
+---
+- utils.filesystem.ensure_dirs:
+    desc: 'create dirs'
+    input:
+      dirs:
+      - {{daily_work_dir}}/
+      - {{daily_work_dir}}/eva/
+      - {{daily_work_dir}}/eva/source
+      - {{daily_work_dir}}/eva/result
+      - {{daily_work_dir}}/eva/result/bad_case_imgs
+
+- utils.shell.run_system_commands:
+    desc: 'save params'
+    cwd: {{daily_work_dir}}
+    input:
+      cmd_lines:
+        - cp /ssd/hnren/Data/coco_300px_large_labelbox_head/FID_DID_HEAD_CLEAN_0_patches_int/annotations/instances_train.json {{daily_work_dir}}/eva/source
+        - cp /ssd/hnren/2nd/zccstig_fsaf/mmdetection/eva_r18.pkl.json {{daily_work_dir}}/eva/source
+
+
+- evaluation.vision_cases.visionalize_cases:
+    desc: 'visionalize cases'
+    input:
+      src_annotation_file: {{daily_work_dir}}/eva/source/instances_train.json
+      src_pred_file: {{daily_work_dir}}/eva/source/eva_r18.pkl.json
+    output:
+      dst_img_save: {{daily_work_dir}}/eva/result/bad_case_imgs
