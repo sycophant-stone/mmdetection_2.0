@@ -99,6 +99,8 @@ if __name__ == '__main__':
     else:
         mark_finished_step = filesystem.file_get_content_as_lines(pipeline_mark_path)
         mark_finished_step_file = open(pipeline_mark_path, mode='a')
+
+    print("mark_finished_step: ",mark_finished_step)
     print("arg.data_dir: ",args.data_dir)
     vars = {
         'data_dir': args.data_dir
@@ -109,10 +111,14 @@ if __name__ == '__main__':
     yaml_definition = template.render(vars)
     process_definition = yaml.load(yaml_definition, Loader=yaml.Loader)
 
+    ## print("process_definition: %s"%(process_definition)) # which will show all the yaml's string(configs).
+    # this is pipe
+    # now at home
     # execute module step by step
-    step = 0
+    step = -1
     for step_fn in process_definition:
         for step_fn_name in step_fn:
+            step = step + 1
             module_name = shell.colored('step[%d]: %s' % (step, step_fn_name), 'cyan')
             mark_id = '%s[%d]' % (step_fn_name, step)
             if mark_id in mark_finished_step:
@@ -140,10 +146,12 @@ if __name__ == '__main__':
             print('\n'.join(display_info))
 
             cwd = step_fn[step_fn_name].get('cwd', '')
+            # start_time = time.time()
             call(cwd, step_fn_name, step_fn[step_fn_name]['input'],
                  step_fn[step_fn_name].get('output', {}))
+            # cost_time = time.time() - start_time
             mark_finished_step_file.write('%s\n' % mark_id)
-            step = step + 1
+
 
     mark_finished_step_file.close()
 
