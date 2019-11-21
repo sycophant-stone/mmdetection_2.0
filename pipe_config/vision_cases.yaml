@@ -10,6 +10,7 @@
       - {{daily_work_dir}}/eva/source
       - {{daily_work_dir}}/eva/result
       - {{daily_work_dir}}/eva/result/bad_case_imgs
+      - {{daily_work_dir}}/eva/result/fpfn_bad_case_imgs
 
 - utils.shell.run_system_commands:
     desc: 'save params'
@@ -20,8 +21,8 @@
         - cp /ssd/hnren/2nd/zccstig_fsaf/mmdetection/eva_r18.pkl.json {{daily_work_dir}}/eva/source
 
 
-- evaluation.vision_cases.visionalize_cases:
-    desc: 'visionalize cases'
+- evaluation.vision_cases.gen_cases_for_visionalization:
+    desc: 'gen cases for visionalization'
     input:
       src_annotation_file: {{daily_work_dir}}/eva/source/instances_train.json
       src_pred_file: {{daily_work_dir}}/eva/source/eva_r18.pkl.json
@@ -30,15 +31,29 @@
     output:
       dst_img_save: {{daily_work_dir}}/eva/result/bad_case_imgs
 
-- evaluation.vision_cases.visionalize_bad_cases:
-    desc: 'visionalize bad cases'
+- evaluation.vision_cases.statistic_bad_cases:
+    desc: 'statistic bad cases'
     input:
       src_annotation_file: {{daily_work_dir}}/eva/source/instances_train.json
       src_pred_file: {{daily_work_dir}}/eva/source/eva_r18.pkl.json
       src_img_dir: /ssd/hnren/Data/coco_300px_large_labelbox_head/FID_DID_HEAD_CLEAN_0_patches_int/JPEGImages
       src_pred_conf: 0.6
-      src_pred_conf_topK: 5
-      src_considered_iou_threshold: 0.5
+      src_pred_conf_topK: 6
+      src_iou_high: 0.5
+      src_iou_low: 0.5
     output:
-      dst_img_save: {{daily_work_dir}}/eva/result/bad_case_imgs
+      dst_bad_cases_record_csv_file: {{daily_work_dir}}/eva/result/fpfn_bad_cases.csv
+
+- evaluation.vision_cases.visionalize_bad_case:
+    desc: 'visionalize the bad cases'
+    input:
+      src_img_dir: /ssd/hnren/Data/coco_300px_large_labelbox_head/FID_DID_HEAD_CLEAN_0_patches_int/JPEGImages
+      src_annotation_file: {{daily_work_dir}}/eva/source/instances_train.json
+      src_pred_file: {{daily_work_dir}}/eva/source/eva_r18.pkl.json
+      src_bad_case_csv_file: {{daily_work_dir}}/eva/result/fpfn_bad_cases.csv
+      src_visual_pred_conf: 0.5
+    output:
+      dst_bad_case_imgs_dir: {{daily_work_dir}}/eva/result/fpfn_bad_case_imgs
+      dst_bad_case_info_file: {{daily_work_dir}}/eva/result/bc_info_all.csv
+
 
