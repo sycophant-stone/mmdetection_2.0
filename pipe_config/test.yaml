@@ -1,0 +1,24 @@
+{% set daily_work_dir = '%s/dataset' % (data_dir) %}
+
+---
+- utils.filesystem.ensure_dirs:
+    desc: 'create dirs'
+    input:
+      dirs:
+      - {{daily_work_dir}}/
+      - {{daily_work_dir}}/test
+
+- helper.test.gen_data:
+    desc: 'gen data, test for data sending..'
+    input:
+      src_array_size: 1000
+    output:
+      dst_np_array: random_np_array
+
+- helper.test.gen_data:
+    desc: 'show data, test for data sending.. yaml just return the string type...'
+    input:
+      src_np_array: random_np_array
+
+
+
