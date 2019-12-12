@@ -1,4 +1,7 @@
 {% set daily_work_dir = '%s/dataset' % (data_dir) %}
+{% set pred_score_conf = '%s' % (pred_conf) %}
+{% set predfilebasename = '%s' % (predfile.split('/')[-1]) %}
+
 
 ---
 - utils.filesystem.ensure_dirs:
@@ -8,52 +11,53 @@
       - {{daily_work_dir}}/
       - {{daily_work_dir}}/eva/
       - {{daily_work_dir}}/eva/source
-      - {{daily_work_dir}}/eva/result
-      - {{daily_work_dir}}/eva/result/bad_case_imgs
-      - {{daily_work_dir}}/eva/result/fpfn_bad_case_imgs
+      - {{daily_work_dir}}/eva/result__{{pred_conf}}
+      - {{daily_work_dir}}/eva/result__{{pred_conf}}/bad_case_imgs
+      - {{daily_work_dir}}/eva/result__{{pred_conf}}/fpfn_bad_case_imgs
 
 - utils.shell.run_system_commands:
     desc: 'save params'
     cwd: {{daily_work_dir}}
     input:
       cmd_lines:
-        - cp /ssd/hnren/Data/coco_300px_large_labelbox_head/FID_DID_HEAD_CLEAN_0_patches_int/annotations/instances_train.json {{daily_work_dir}}/eva/source
-        - cp /ssd/hnren/2nd/zccstig_fsaf/mmdetection/eva_r18.pkl.json {{daily_work_dir}}/eva/source
+        # - cp /ssd/hnren/Data/coco_300px_large_labelbox_head/FID_DID_HEAD_CLEAN_0_patches_int/annotations/instances_train.json {{daily_work_dir}}/eva/source
+        - cp {{gtfile}} {{daily_work_dir}}/eva/source
+        - cp {{predfile}} {{daily_work_dir}}/eva/source
 
 
 - evaluation.vision_cases.gen_cases_for_visionalization:
     desc: 'gen cases for visionalization'
     input:
       src_annotation_file: {{daily_work_dir}}/eva/source/instances_train.json
-      src_pred_file: {{daily_work_dir}}/eva/source/eva_r18.pkl.json
-      src_img_dir: /ssd/hnren/Data/coco_300px_large_labelbox_head/FID_DID_HEAD_CLEAN_0_patches_int/JPEGImages
-      src_pred_conf: 0.6
+      src_pred_file: {{daily_work_dir}}/eva/source/{{predfilebasename}}
+      src_img_dir: {{imgs}}
+      src_pred_conf: {{pred_score_conf}}
     output:
-      dst_img_save: {{daily_work_dir}}/eva/result/bad_case_imgs
+      dst_img_save: {{daily_work_dir}}/eva/result__{{pred_conf}}/bad_case_imgs
 
 - evaluation.vision_cases.statistic_bad_cases:
     desc: 'statistic bad cases'
     input:
       src_annotation_file: {{daily_work_dir}}/eva/source/instances_train.json
-      src_pred_file: {{daily_work_dir}}/eva/source/eva_r18.pkl.json
-      src_img_dir: /ssd/hnren/Data/coco_300px_large_labelbox_head/FID_DID_HEAD_CLEAN_0_patches_int/JPEGImages
-      src_pred_conf: 0.6
+      src_pred_file: {{daily_work_dir}}/eva/source/{{predfilebasename}}
+      src_img_dir: {{imgs}}
+      src_pred_conf: {{pred_score_conf}}
       src_pred_conf_topK: 6
       src_iou_high: 0.5
       src_iou_low: 0.5
     output:
-      dst_bad_cases_record_csv_file: {{daily_work_dir}}/eva/result/fpfn_bad_cases.csv
+      dst_bad_cases_record_csv_file: {{daily_work_dir}}/eva/result__{{pred_conf}}/fpfn_bad_cases.csv
 
 - evaluation.vision_cases.visionalize_bad_case:
     desc: 'visionalize the bad cases'
     input:
-      src_img_dir: /ssd/hnren/Data/coco_300px_large_labelbox_head/FID_DID_HEAD_CLEAN_0_patches_int/JPEGImages
+      src_img_dir: {{imgs}}
       src_annotation_file: {{daily_work_dir}}/eva/source/instances_train.json
-      src_pred_file: {{daily_work_dir}}/eva/source/eva_r18.pkl.json
-      src_bad_case_csv_file: {{daily_work_dir}}/eva/result/fpfn_bad_cases.csv
-      src_visual_pred_conf: 0.5
+      src_pred_file: {{daily_work_dir}}/eva/source/{{predfilebasename}}
+      src_bad_case_csv_file: {{daily_work_dir}}/eva/result__{{pred_conf}}/fpfn_bad_cases.csv
+      src_visual_pred_conf: {{pred_score_conf}}
     output:
-      dst_bad_case_imgs_dir: {{daily_work_dir}}/eva/result/fpfn_bad_case_imgs
-      dst_bad_case_info_file: {{daily_work_dir}}/eva/result/bc_info_all.csv
+      dst_bad_case_imgs_dir: {{daily_work_dir}}/eva/result__{{pred_conf}}/fpfn_bad_case_imgs
+      dst_bad_case_info_file: {{daily_work_dir}}/eva/result__{{pred_conf}}/bc_info_all.csv
 
 

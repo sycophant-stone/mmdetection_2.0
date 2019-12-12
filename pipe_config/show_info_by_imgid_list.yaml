@@ -1,0 +1,71 @@
+{% set daily_work_dir = '%s/dataset' % (data_dir) %}
+{% set pred_score_conf = '%s' % (0.4) %}
+
+---
+
+- utils.filesystem.ensure_dirs:
+    desc: 'create dirs'
+    input:
+      dirs:
+      - {{daily_work_dir}}/
+      - {{daily_work_dir}}/eva/
+      - {{daily_work_dir}}/eva/multi_show_by_imgids
+      - {{daily_work_dir}}/eva/multi_show_by_imgids/source_data
+      - {{daily_work_dir}}/eva/multi_show_by_imgids/res
+      - {{daily_work_dir}}/eva/multi_show_by_imgids/res/res_bad_imgs
+
+# the gtfile : /ssd/hnren/Data/coco_300px_clean_head_beta/annotations/instances_train.json
+- utils.shell.run_system_commands:
+    desc: 'save params'
+    cwd: {{daily_work_dir}}
+    input:
+      cmd_lines:
+        - cp {{gtfile}} {{daily_work_dir}}/eva/multi_show_by_imgids/source_data/gt_file.json
+        - cp {{predfile}} {{daily_work_dir}}/eva/multi_show_by_imgids/source_data/pred_file.json
+
+- evaluation.vision_cases.gen_badimgid_from_dir:
+    desc: 'gen imgid list file from dir..'
+    input:
+      src_imgs_dir: {{bad_imgs_dir}}
+    output:
+      dst_img_listfile: {{daily_work_dir}}/eva/multi_show_by_imgids/source_data/imgids.list
+
+#  --imgs /ssd/hnren/Data/coco_300px_clean_head_beta/JPEGImages
+- evaluation.vision_cases.visionalize_by_imgid_list:
+    desc: 'gen cases for visionalization'
+    input:
+      src_anno_file: {{daily_work_dir}}/eva/multi_show_by_imgids/source_data/gt_file.json
+      src_pred_file: {{daily_work_dir}}/eva/multi_show_by_imgids/source_data/pred_file.json
+      src_img_dir: {{imgs}}
+      src_imgid_list_file: {{daily_work_dir}}/eva/multi_show_by_imgids/source_data/imgids.list
+      src_pred_conf: {{pred_conf}}
+    output:
+      dst_img_dir: {{daily_work_dir}}/eva/multi_show_by_imgids/res/res_bad_imgs
+
+# - evaluation.vision_cases.statistic_bad_cases:
+#     desc: 'statistic bad cases'
+#     input:
+#       src_annotation_file: {{daily_work_dir}}/eva/multi_show_by_imgids/source_data/gt_file.json
+#       src_pred_file: {{daily_work_dir}}/eva/multi_show_by_imgids/source_data/pred_file.json
+#       src_img_dir: {{imgs}}
+#       src_pred_conf: {{pred_score_conf}}
+#       src_pred_conf_topK: 6
+#       src_iou_high: 0.5
+#       src_iou_low: 0.5
+#     output:
+#       dst_bad_cases_record_csv_file: {{daily_work_dir}}/eva/multi_show_by_imgids/res/fpfn_bad_cases.csv
+#
+# - evaluation.vision_cases.visionalize_bad_case:
+#     desc: 'visionalize the bad cases'
+#     input:
+#       src_img_dir: {{imgs}}
+#       src_annotation_file: {{daily_work_dir}}/eva/multi_show_by_imgids/source_data/gt_file.json
+#       src_pred_file: {{daily_work_dir}}/eva/multi_show_by_imgids/source_data/pred_file.json
+#       src_bad_case_csv_file: {{daily_work_dir}}/eva/multi_show_by_imgids/res/fpfn_bad_cases.csv
+#       src_visual_pred_conf: {{pred_score_conf}}
+#     output:
+#       dst_bad_case_imgs_dir: {{daily_work_dir}}/eva/multi_show_by_imgids/res/fpfn_bad_case_imgs
+#       dst_bad_case_info_file: {{daily_work_dir}}/eva/multi_show_by_imgids/res/bc_info_all.csv
+
+
+

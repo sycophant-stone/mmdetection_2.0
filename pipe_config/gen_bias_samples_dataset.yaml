@@ -1,0 +1,24 @@
+{% set daily_work_dir = '%s/dataset' % (data_dir) %}
+{% set pred_score_conf = '%s' % (0.4) %}
+
+---
+
+- utils.filesystem.ensure_dirs:
+    desc: 'create dirs'
+    input:
+      dirs:
+      - {{daily_work_dir}}/
+      - {{daily_work_dir}}/subsets
+      - {{daily_work_dir}}/subsets/source_data
+      - {{daily_work_dir}}/subsets/JPEGImages
+      - {{daily_work_dir}}/subsets/annotations
+
+- evaluation.prepare_data_for_subsets.prepare:
+    desc: 'prepare data for subset datasets..'
+    input:
+      src_img_list_file: {{imgidlist}}
+      src_ref_imgs_dir: {{refimgdir}}
+      src_ref_anno_file: {{refannofile}}
+    output:
+      dst_img_dir: {{daily_work_dir}}/subsets/JPEGImages
+      dst_anno_dir: {{daily_work_dir}}/subsets/annotations

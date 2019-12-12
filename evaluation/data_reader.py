@@ -33,7 +33,6 @@ def csv_file_to_listdata(src_csv_data_file):
         for line in f.readlines():
             src_csv_data_list.append(int(line.strip()))
 
-        print("src_csv_data_list: ", src_csv_data_list)
         return src_csv_data_list
 
 def csv_file_to_listdata_multilines(src_csv_data_file):
@@ -46,7 +45,6 @@ def csv_file_to_listdata_multilines(src_csv_data_file):
         for line in f.readlines():
             src_csv_data_list.append(int(line.strip()))
 
-        print("src_csv_data_list: ", src_csv_data_list)
         return src_csv_data_list
 
 

@@ -85,6 +85,13 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--yaml', type=str, help='INPUT: process define yaml', required=True)
     parser.add_argument('--data_dir', type=str, help='INPUT: work dir path', required=True)
+    parser.add_argument('--gtfile', type=str, help='INPUT: gt file as coco format..', required=True)
+    parser.add_argument('--imgs', type=str, help='INPUT: imgs dir ..', required=True)
+    parser.add_argument('--predfile', type=str, help='INPUT: pred file .. json file ..', required=True)
+    parser.add_argument('--pred_conf', type=str, help='INPUT: pred conf value ..', required=True)
+    parser.add_argument('--imgid', type=str, help='INPUT: when check by imgid.. ', required=False)
+    parser.add_argument('--imgidlist', type=str, help='INPUT: when check by imgid list.. ', required=False)
+    parser.add_argument('--bad_imgs_dir', type=str, help='INPUT: when check by imgid list.. ', required=False)
     parser.add_argument('--end_step', type=str, help='INPUT: whether pre stop at the end_step.', required=False)
 
     args = parser.parse_args()
@@ -103,7 +110,14 @@ if __name__ == '__main__':
     print("mark_finished_step: ",mark_finished_step)
     print("arg.data_dir: ",args.data_dir)
     vars = {
-        'data_dir': args.data_dir
+        'data_dir': args.data_dir,
+        'gtfile': args.gtfile,
+        'imgs': args.imgs,
+        'predfile': args.predfile,
+        'pred_conf': args.pred_conf,
+        'imgid': args.imgid,
+        'bad_imgs_dir': args.bad_imgs_dir,
+        'imgidlist': args.imgid
     }
     yaml.Loader.add_constructor('!CONCAT', yaml_tags_concat.ConcatTag.from_yaml)
     yaml.Dumper.add_multi_representer(yaml_tags_concat.ConcatTag, yaml_tags_concat.ConcatTag.to_yaml)
