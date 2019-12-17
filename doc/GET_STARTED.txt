@@ -1,0 +1,3 @@
+## evaluate with gt coco format with predictions. and list, save bad cases..
+
+python pipe.py --yaml pipe_config/vision_cases.yaml --data_dir /ssd/hnren/2nd/zccstig_fsaf/mmdetection/eva_out_beta --gtfile /ssd/hnren/Data/coco_300px_clean_head_beta/annotations/instances_train.json --imgs /ssd/hnren/Data/coco_300px_clean_head_beta/JPEGImages --predfile /ssd/hnren/2nd/zccstig_fsaf/mmdetection/2.pkl.json --pred_conf 0.45

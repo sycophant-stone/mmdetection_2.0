@@ -377,6 +377,7 @@ class FCOSHead(nn.Module):
 
     def centerness_target(self, pos_bbox_targets):
         # only calculate pos centerness targets, otherwise there may be nan
+        # print("centerness_target with pos_bbox_targets shape:",pos_bbox_targets.shape)
         left_right = pos_bbox_targets[:, [0, 2]]
         top_bottom = pos_bbox_targets[:, [1, 3]]
         centerness_targets = (

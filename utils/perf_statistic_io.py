@@ -94,9 +94,9 @@ class PerfStatistic(object):
         self.layer_mem_map[name] = mem_costage
 
     def evaluation_result(self):
-        print("==============================================")
-        print("evaluation [[ %s  ]]  results: "%(self.which_net))
-        print("==============================================")
+        # print("==============================================")
+        # print("evaluation [[ %s  ]]  results: "%(self.which_net))
+        # print("==============================================")
         namelist = self.layer_mem_map.keys()
         all_mem=0
         all_flops=0
@@ -110,9 +110,9 @@ class PerfStatistic(object):
             print("---------------------------------------------------------")
             all_mem = all_mem + self.layer_mem_map[name]
             all_flops = all_flops + self.layer_FLOPs_map[name]
-
-        print("[  All  ]    mem costage:   %s" % (all_mem))
-        print("[  All  ]    flops      :   %s" % (all_flops))
-        print("---------------------------------------------------------")
+        # if want to show the resnet params..
+        # print("[  All  ]    mem costage:   %s" % (all_mem))
+        # print("[  All  ]    flops      :   %s" % (all_flops))
+        # print("---------------------------------------------------------")
 
 

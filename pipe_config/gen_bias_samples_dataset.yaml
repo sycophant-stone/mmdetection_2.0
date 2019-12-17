@@ -17,8 +17,15 @@
     desc: 'prepare data for subset datasets..'
     input:
       src_img_list_file: {{imgidlist}}
-      src_ref_imgs_dir: {{refimgdir}}
+      src_ref_imgs_dir: {{imgs}}
       src_ref_anno_file: {{refannofile}}
     output:
       dst_img_dir: {{daily_work_dir}}/subsets/JPEGImages
       dst_anno_dir: {{daily_work_dir}}/subsets/annotations
+
+- utils.shell.run_system_commands:
+    desc: 'save results..'
+    cwd: {{daily_work_dir}}
+    input:
+      cmd_lines:
+        - cp -rf {{daily_work_dir}}/subsets /ssd/hnren/Data/subtrain

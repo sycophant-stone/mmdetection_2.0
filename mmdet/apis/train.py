@@ -84,6 +84,8 @@ def build_optimizer(model, optimizer_cfg):
     Returns:
         torch.optim.Optimizer: The initialized optimizer.
     """
+    '''optimizer_cfg:  {'type': 'SGD', 'lr': 0.01, 'momentum': 0.9, 'weight_decay': 0.0001, 'paramwise_options': {'bias_lr_mult': 2.0, 'bias_decay_mult': 0.0}}
+    '''
     if hasattr(model, 'module'):
         model = model.module
 
@@ -118,15 +120,18 @@ def build_optimizer(model, optimizer_cfg):
             if re.search(r'(bn|gn)(\d+)?.(weight|bias)', name):
                 if base_wd is not None:
                     param_group['weight_decay'] = base_wd * norm_decay_mult
+                    # print(" for w and b, base_wd:%s, norm_decay_mult:%s with param_group['weight_decay']:%s"%(base_wd, norm_decay_mult, param_group['weight_decay']))
             # for other layers, overwrite both lr and weight decay of bias
             elif name.endswith('.bias'):
                 param_group['lr'] = base_lr * bias_lr_mult
                 if base_wd is not None:
                     param_group['weight_decay'] = base_wd * bias_decay_mult
+                    # print(" for b, base_wd:%s, norm_decay_mult:%s with param_group['weight_decay']:%s" % (base_wd, norm_decay_mult, param_group['weight_decay']))
             # otherwise use the global settings
 
             params.append(param_group)
-
+        # print("opt params: %s"%(params))
+        # raise Exception('stop..')
         optimizer_cls = getattr(torch.optim, optimizer_cfg.pop('type'))
         return optimizer_cls(params, **optimizer_cfg)
 
