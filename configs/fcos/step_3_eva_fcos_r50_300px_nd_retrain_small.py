@@ -73,7 +73,20 @@ data = dict(
         flip_ratio=0.5,
         with_mask=False,
         with_crowd=False,
-        with_label=True),
+        with_label=True,
+        extra_aug=dict(
+            photo_metric_distortion=dict(
+                brightness_delta=32,
+                contrast_range=(0.5, 1.5),
+                saturation_range=(0.5, 1.5),
+                hue_delta=18),
+            expand=dict(
+                mean=img_norm_cfg['mean'],
+                to_rgb=img_norm_cfg['to_rgb'],
+                ratio_range=(1, 4)),
+            random_crop=dict(
+                min_ious=(0.1, 0.3, 0.5, 0.7, 0.9), min_crop_size=0.3))
+    ),
     val=dict(
         type=dataset_type,
         ann_file=data_root + 'annotations/instances_train_subset.json',
@@ -89,7 +102,8 @@ data = dict(
         type=dataset_type,
         # ann_file=data_root + 'annotations/instances_train_subset.json',
         # img_prefix=data_root + 'JPEGImages/',
-        ann_file='/ssd/hnren/Data/coco_300px_clean_head_beta/annotations/instances_train.json',
+        # ann_file='/ssd/hnren/Data/coco_300px_clean_head_beta/annotations/instances_train.json',
+        ann_file='/ssd/hnren/Data/coco_300px_clean_head_beta/annotations/instances_test.json',
         img_prefix='/ssd/hnren/Data/coco_300px_clean_head_beta/JPEGImages/',
         img_scale=(300, 300),
         img_norm_cfg=img_norm_cfg,
@@ -102,7 +116,8 @@ data = dict(
 # optimizer
 optimizer = dict(
     type='SGD',
-    lr=0.01,
+    # lr=0.01,
+    lr=0.001,  # using a smaller lr for fixed lr policy, cause the loss will be nan at 0.01..
     momentum=0.9,
     weight_decay=0,  # 0.0001,
     paramwise_options=dict(bias_lr_mult=2., bias_decay_mult=0., norm_decay_mult=0.))
@@ -129,7 +144,7 @@ total_epochs = 30
 device_ids = range(4)
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-work_dir = './work_dirs/step_5_allbegin_eva_r50_300px_nd'
+work_dir = './work_dirs/step_5_DataArgu_fixedlr_allbegin_eva_r50_300px_nd'
 load_from = None
 resume_from = None
 workflow = [('train', 1)]
